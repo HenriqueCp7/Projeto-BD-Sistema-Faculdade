@@ -1,0 +1,5 @@
+#Biblioteca do Flask
+#pip install Flask mysql-connector-python flask-cors
+
+#//Mysql connector
+#pip install mysql-connector-python

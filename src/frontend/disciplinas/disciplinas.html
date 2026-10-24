@@ -1,0 +1,129 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disciplinas - Sistema Faculdade</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="disciplinas.js" defer></script>
+</head>
+<body>
+    <main class="pagina-container">
+        <header class="pagina-header">
+            <a href="../index.html" class="voltar">← Voltar ao início</a>
+            <h1>Sistema Faculdade</h1>
+            <p>Gerenciamento de disciplinas</p>
+        </header>
+
+        <section class="painel">
+            <div class="secao-header">
+                <div>
+                    <h2>Consultar disciplinas</h2>
+                    <p>Busque uma disciplina pelo ID ou consulte todos os registros.</p>
+                </div>
+                <button type="button" id="btnListar">Listar disciplinas</button>
+            </div>
+
+            <div class="busca-container">
+                <div class="campo">
+                    <label for="idBusca">ID da disciplina</label>
+                    <input type="number" id="idBusca" placeholder="Digite o ID" min="1">
+                </div>
+                <button type="button" id="btnBuscar">Buscar disciplina</button>
+            </div>
+
+            <p id="resultadoBusca" class="resultado"></p>
+            <ul id="listaDisciplinas" class="lista-registros"></ul>
+        </section>
+
+        <section class="painel">
+            <div class="secao-header">
+                <div>
+                    <h2>Cadastrar disciplina</h2>
+                    <p>Preencha os dados para adicionar uma nova disciplina.</p>
+                </div>
+            </div>
+
+            <form id="formDisciplina" class="formulario">
+                <div class="campo">
+                    <label for="nomeDisciplina">Nome da disciplina</label>
+                    <input type="text" id="nomeDisciplina" placeholder="Digite o nome da disciplina" required>
+                </div>
+
+                <div class="campo">
+                    <label for="cargaHoraria">Carga horária</label>
+                    <input type="number" id="cargaHoraria" placeholder="Ex.: 80" min="1" required>
+                </div>
+
+                <div class="campo">
+                    <label for="idCurso">Curso</label>
+                    <input type="number" id="idCurso" placeholder="ID do curso" min="1" required>
+                </div>
+
+                <div class="formulario-acoes">
+                    <button type="submit">Cadastrar disciplina</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="painel">
+            <div class="secao-header">
+                <div>
+                    <h2>Editar disciplina</h2>
+                    <p>Informe o ID da disciplina e os novos dados.</p>
+                </div>
+            </div>
+
+            <form id="formEditar" class="formulario">
+                <div class="campo">
+                    <label for="editarId">ID da disciplina</label>
+                    <input type="number" id="editarId" placeholder="ID da disciplina" min="1" required>
+                </div>
+
+                <div class="campo">
+                    <label for="editarNome">Nome da disciplina</label>
+                    <input type="text" id="editarNome" placeholder="Nome da disciplina" required>
+                </div>
+
+                <div class="campo">
+                    <label for="editarCargaHoraria">Carga horária</label>
+                    <input type="number" id="editarCargaHoraria" placeholder="Carga horária" min="1" required>
+                </div>
+
+                <div class="campo">
+                    <label for="editarIdCurso">ID do curso</label>
+                    <input type="number" id="editarIdCurso" placeholder="ID do curso" min="1" required>
+                </div>
+
+                <div class="formulario-acoes">
+                    <button type="submit">Salvar alterações</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="painel">
+            <div class="secao-header">
+                <div>
+                    <h2>Excluir disciplina</h2>
+                    <p>Informe o ID da disciplina que deseja excluir.</p>
+                </div>
+            </div>
+
+            <form id="formExcluirDisciplina" class="formulario">
+                <div class="campo">
+                    <label for="excluirIdDisciplina">ID da disciplina</label>
+                    <input type="number" id="excluirIdDisciplina"
+                        placeholder="Digite o ID da disciplina"
+                        min="1" required>
+                </div>
+
+                <div class="formulario-acoes">
+                    <button type="submit">Excluir disciplina</button>
+                </div>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
+```
