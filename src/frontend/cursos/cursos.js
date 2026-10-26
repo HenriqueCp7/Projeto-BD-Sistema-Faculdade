@@ -123,7 +123,6 @@ document.getElementById("btnBuscar")
             resultado.textContent =
                 `ID: ${curso.id_curso} | Nome: ${curso.nome_curso} | Carga horária: ${curso.carga_horaria} | Turno: ${curso.turno}`;
 
-            // Preenche o formulário de edição
             document.getElementById("editarId").value = curso.id_curso;
             document.getElementById("editarNome").value = curso.nome_curso;
             document.getElementById("editarCargaHoraria").value = curso.carga_horaria;
