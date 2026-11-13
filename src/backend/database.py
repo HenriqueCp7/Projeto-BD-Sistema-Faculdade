@@ -1,15 +1,36 @@
+import os
 import mysql.connector
 
-def conectar():
-    conexao = mysql.connector.connect(
-        host="localhost",
-        port=3306,
-        user="root",
-        password="",
-        database="sistema_faculdade"
-    )
+CONFIG = {
+    "host": "localhost",
+    "port": 3306,
+    "user": "root",
+    "password": "",
+}
 
-    return conexao
+DB_NAME = "sistema_faculdade"
+
+
+def conectar():
+    return mysql.connector.connect(**CONFIG, database=DB_NAME)
+
+
+def inicializar_banco():
+    conexao = mysql.connector.connect(**CONFIG)
+    cursor = conexao.cursor()
+
+    cursor.execute(f"SHOW DATABASES LIKE '{DB_NAME}'")
+    if cursor.fetchone() is None:
+        caminho = os.path.join(os.path.dirname(__file__), "schema.sql")
+        with open(caminho, encoding="utf-8") as f:
+            comandos = f.read().split(";")
+        for comando in comandos:
+            if comando.strip():
+                cursor.execute(comando)
+        conexao.commit()
+
+    cursor.close()
+    conexao.close()
 
 #CRUD ALUNOS
 def listar_alunos():
